@@ -19,4 +19,12 @@ class Serie extends Model
     {
         return $this->hasMany(Episode::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class);
+    }
 }

@@ -8,38 +8,17 @@ use Illuminate\Filesystem\Filesystem;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Some quick seeding to make testing easier.
      *
+     * @param Filesystem $filesystem
      * @return void
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     public function run(Filesystem $filesystem)
     {
-        foreach ($filesystem->allFiles(storage_path('seeds/series')) AS $file) {
-            $serie = \json_decode($file->getContents());
-
-            Serie::unguard();
-
-            $years = array_filter(explode('–', $serie->Year));
-
-            $startedAt = $years[0];
-            $endedAt = $years[1] ?? null;
-
-
-            Serie::firstOrCreate([
-                'imdb_id' => $serie->imdbID,
-            ], [
-                'imdb_id' => $serie->imdbID,
-                'title' => $serie->Title,
-                'plot' => $serie->Plot,
-                'rated' => $serie->Rated,
-                'year_started_at' => $startedAt,
-                'year_ended_at' => $endedAt,
-            ]);
-        }
-
-        Serie::unguard();
-        Episode::unguard();
-
+        /*
+         * Iterate over all series
+         */
         foreach ($filesystem->allFiles(storage_path('seeds/series')) AS $serieFile) {
             $serieData = \json_decode($serieFile->getContents());
 
@@ -57,13 +36,40 @@ class DatabaseSeeder extends Seeder
                     'year_ended_at' => $endedAt,
                 ]);
 
+            /*
+             * Attach the related poster to the current serie.
+             */
             $serie->posters()->updateOrCreate(['url' => $serieData->Poster],[
                 'url' => $serieData->Poster
             ]);
 
+
+            /*
+             * Create and sync genres for this serie.
+             */
+            $genres = explode(", ", $serieData->Genre);
+            $genresForSerie = [];
+            foreach($genres AS $genre){
+                $genre = \App\Genre::updateOrCreate([
+                    'title' => $genre
+                ]);
+
+                $genresForSerie[] = $genre->id;
+            }
+
+            $serie->genres()->syncWithoutDetaching($genresForSerie);
+
+
+            /*
+             * Iterate over the season files for this serie.
+             */
             foreach ($serieData->seasons AS $seasonFile) {
                 $seasonData = \json_decode($filesystem->get(storage_path(sprintf('seeds/seasons/%s', $seasonFile))));
 
+                /*
+                 * Create all episodes based on the season file
+                 * REMINDER: When enriching the database  fetch the episode files as well.
+                 */
                 foreach ($seasonData->Episodes AS $episodeData) {
                     $serie->episodes()->updateOrCreate(
                         ['imdb_id' => $episodeData->imdbID],
