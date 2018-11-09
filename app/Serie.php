@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Interfaces\RateableInterface;
 use App\Traits\Posterable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Serie
  * @package App
  */
-class Serie extends Model
+class Serie extends Model implements RateableInterface
 {
     use Posterable;
     /**
