@@ -16,6 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(Filesystem $filesystem)
     {
+
+        /*
+         * Create a user
+         */
+
+        factory(\App\User::class)->create([
+            'name' => 'Dirk',
+            'email' => 'test@test.nl',
+        ]);
+
+
         /*
          * Iterate over all series
          */
