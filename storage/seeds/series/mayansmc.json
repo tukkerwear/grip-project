@@ -1,0 +1,30 @@
+{
+    "Title": "Mayans M.C.",
+    "Year": "2018–",
+    "Rated": "N/A",
+    "Released": "04 Sep 2018",
+    "Runtime": "60 min",
+    "Genre": "Crime, Drama, Thriller",
+    "Director": "N/A",
+    "Writer": "Elgin James, Kurt Sutter",
+    "Actors": "JD Pardo, Clayton Cardenas, Sarah Bolger, Michael Irby",
+    "Plot": "Set in a post-Jax Teller world, \"Mayans MC\" sees EZ Reyes, a former golden boy now fresh out of prison, as a prospect in the Mayan MC charter on the California-Mexico border who must carve out his new outlaw identity.",
+    "Language": "English",
+    "Country": "USA",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTY5MzBiNmEtOGE0MS00YzYzLWE3MGYtNmYwMDdiNzZiMDU5XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.6/10"
+        }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.6",
+    "imdbVotes": "3,738",
+    "imdbID": "tt5715524",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True",
+    "seasons": ["mayansmc_s1.json"]
+}
