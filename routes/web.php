@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,10 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::loginUsingId(1);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$router->get('/')->uses('PageController@index')->name('pages.index');
 
 Auth::routes();
 

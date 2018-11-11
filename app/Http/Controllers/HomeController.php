@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Episode;
+use App\Serie;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+
+        $episode = Episode::first();
+
+        auth()->user()->rate(Serie::first(), 4);
+        auth()->user()->ratingsForType(new Episode)->get();
+
+        return view('welcome');
+
+//        dd(  );
     }
 }

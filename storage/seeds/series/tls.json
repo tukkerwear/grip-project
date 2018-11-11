@@ -1,0 +1,30 @@
+{
+    "Title": "The Last Ship",
+    "Year": "2014–",
+    "Rated": "TV-14",
+    "Released": "22 Jun 2014",
+    "Runtime": "60 min",
+    "Genre": "Action, Drama, Sci-Fi, Thriller, War",
+    "Director": "N/A",
+    "Writer": "Steven Kane, Hank Steinberg",
+    "Actors": "Eric Dane, Adam Baldwin, Charles Parnell, Travis Van Winkle",
+    "Plot": "The crew of a naval destroyer is forced to confront the reality of a new existence when a pandemic kills off most of the earth's population.",
+    "Language": "English",
+    "Country": "USA",
+    "Awards": "5 nominations.",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTU1NzM1MzkwMl5BMl5BanBnXkFtZTgwNjUzMTgxNjM@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.5/10"
+        }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.5",
+    "imdbVotes": "49,067",
+    "imdbID": "tt2402207",
+    "Type": "series",
+    "totalSeasons": "5",
+    "Response": "True",
+    "seasons": ["tls_s1.json"]
+}

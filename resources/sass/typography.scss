@@ -1,0 +1,15 @@
+//Custom fonts
+@font-face {
+    font-family: 'Wonderbar';
+    src: url("/fonts/Wonderbar Demo.otf");
+}
+
+// Defaults
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$fa-font-path:  "webfonts/" !default;
+
+//Headings
+$headings-font-family: "Nunito";
+$headings-font-weight: 700;

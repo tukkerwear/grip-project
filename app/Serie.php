@@ -28,4 +28,32 @@ class Serie extends Model implements RateableInterface
     {
         return $this->belongsToMany(Genre::class);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultPosterAttribute()
+    {
+        return $this->posters->first();
+    }
+
+    /**
+     * @param $query
+     * @param $quantity
+     * @return mixed
+     */
+    public function scopeRecentlyAdded($query, $quantity)
+    {
+        return $query->orderByDesc('created_at')->take($quantity);
+    }
+
+    /**
+     * @param $query
+     * @param $quantity
+     * @return mixed
+     */
+    public function scopeRecentlyUpdated($query, $quantity)
+    {
+        return $query->orderByDesc('updated_at')->take($quantity);
+    }
 }

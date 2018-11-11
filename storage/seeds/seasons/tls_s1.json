@@ -1,0 +1,78 @@
+{
+    "Title": "The Last Ship",
+    "Season": "1",
+    "totalSeasons": "5",
+    "Episodes": [
+        {
+            "Title": "Phase Six",
+            "Released": "2014-06-22",
+            "Episode": "1",
+            "imdbRating": "8.1",
+            "imdbID": "tt3307766"
+        },
+        {
+            "Title": "Welcome to Gitmo",
+            "Released": "2014-06-29",
+            "Episode": "2",
+            "imdbRating": "8.1",
+            "imdbID": "tt3350816"
+        },
+        {
+            "Title": "Dead Reckoning",
+            "Released": "2014-07-06",
+            "Episode": "3",
+            "imdbRating": "8.4",
+            "imdbID": "tt3355528"
+        },
+        {
+            "Title": "We'll Get There",
+            "Released": "2014-07-13",
+            "Episode": "4",
+            "imdbRating": "7.9",
+            "imdbID": "tt3398224"
+        },
+        {
+            "Title": "El Toro",
+            "Released": "2014-07-20",
+            "Episode": "5",
+            "imdbRating": "8.3",
+            "imdbID": "tt3398226"
+        },
+        {
+            "Title": "Lockdown",
+            "Released": "2014-07-27",
+            "Episode": "6",
+            "imdbRating": "8.2",
+            "imdbID": "tt3399198"
+        },
+        {
+            "Title": "SOS",
+            "Released": "2014-08-03",
+            "Episode": "7",
+            "imdbRating": "8.3",
+            "imdbID": "tt3903734"
+        },
+        {
+            "Title": "Two Sailors Walk Into a Bar...",
+            "Released": "2014-08-10",
+            "Episode": "8",
+            "imdbRating": "8.9",
+            "imdbID": "tt3399200"
+        },
+        {
+            "Title": "Trials",
+            "Released": "2014-08-17",
+            "Episode": "9",
+            "imdbRating": "8.8",
+            "imdbID": "tt3340416"
+        },
+        {
+            "Title": "No Place Like Home",
+            "Released": "2014-08-24",
+            "Episode": "10",
+            "imdbRating": "9.0",
+            "imdbID": "tt3473116"
+        }
+    ],
+    "Response": "True"
+}
