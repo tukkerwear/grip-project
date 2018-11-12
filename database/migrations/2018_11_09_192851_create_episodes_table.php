@@ -20,7 +20,7 @@ class CreateEpisodesTable extends Migration
             $table->string('title');
             $table->unsignedInteger('season');
             $table->unsignedInteger('episode');
-            $table->dateTime('released_at');
+            $table->dateTime('released_at')->nullable();
             $table->timestamps();
 
             $table->foreign('serie_id')->references('id')->on('series');

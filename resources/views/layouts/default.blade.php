@@ -12,8 +12,10 @@
 </head>
 <body>
 @include('layouts.navbars._default')
-<div class="container main-content">
+<div class="container main-content" id="app">
     @yield('content')
+
+    <notifications group="notifications" position="bottom right">asdf</notifications>
 </div>
 
 <script src="{{mix('js/app.js')}}"></script>

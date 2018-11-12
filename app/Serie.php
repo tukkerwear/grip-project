@@ -4,6 +4,7 @@ namespace App;
 
 use App\Interfaces\RateableInterface;
 use App\Traits\Posterable;
+use App\Traits\Rateable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -12,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Serie extends Model implements RateableInterface
 {
-    use Posterable;
+    use Posterable, Rateable;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -14,4 +14,18 @@ use Illuminate\Database\Eloquent\Model;
 class Episode extends Model implements RateableInterface
 {
     use Posterable, Rateable;
+
+    /**
+     * @var array
+     */
+    protected $touches = ['serie'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function serie()
+    {
+        return $this->belongsTo(Serie::class);
+    }
 }

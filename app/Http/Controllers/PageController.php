@@ -17,8 +17,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        $seriesRecentlyCreated = Serie::recentlyAdded(5)->with('posters')->get();
-        $seriesRecentlyUpdated = Serie::recentlyUpdated(5)->with('posters')->get();
+        $seriesRecentlyCreated = Serie::recentlyAdded(3)->with(['posters', 'rating'])->get();
+        $seriesRecentlyUpdated = Serie::recentlyUpdated(3)->with('posters', 'rating')->get();
 
         return view('pages.index', compact('seriesRecentlyCreated', 'seriesRecentlyUpdated'));
     }

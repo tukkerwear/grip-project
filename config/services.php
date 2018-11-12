@@ -39,5 +39,8 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    'omdb' => [
+        'key' => env('OMDB_APIKEY')
+    ]
 
 ];

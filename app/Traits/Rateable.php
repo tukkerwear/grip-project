@@ -15,9 +15,11 @@ trait Rateable
     /**
      * @return mixed
      */
-    public function ratings()
+    public function rating()
     {
-        return $this->morphMany(Rating::class, 'rateable')->where('user_id', auth()->id());
+        return $this->morphOne(Rating::class, 'rateable')->where('user_id', auth()->id())->withDefault([
+            'rating' => 0
+        ]);
     }
 
     public function scopeRated()

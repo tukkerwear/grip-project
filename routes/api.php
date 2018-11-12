@@ -16,3 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+$router->patch('series/{serie}/ratings')->uses('Api\SerieRatingController@update')->name('series.ratings.patch');

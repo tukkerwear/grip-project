@@ -4,10 +4,15 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import VueSweetAlert from 'vue-sweetalert'
+import Notifications from 'vue-notification'
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+
+
+Vue.use(VueSweetAlert);
+Vue.use(Notifications);
 
 /**
  * The following block of code may be used to automatically register your
@@ -17,7 +22,8 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('serie-card', require('./components/Series/Tile.vue'));
+Vue.component('stars', require('./components/Ratings/Stars.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 
