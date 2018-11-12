@@ -20,6 +20,6 @@ class SerieRatingController extends Controller
      */
     public function update(Request $request, Serie $serie)
     {
-        auth()->user()->rate($serie, $request->get('rating', 2));
+        auth()->user()->rate($serie, $request->get('rating', 0));
     }
 }

@@ -43,16 +43,26 @@
             handleUpdatedRating: function (rating) {
                 this.stars = rating;
 
-                axios.patch(`/api/series/${this.serie.id}/ratings`, {
-                    rating: rating
-                }).then((response) => {
-                    this.$notify({
-                        group: 'notifications',
-                        title: 'Rating has been updated',
-                        text: `You have given <strong>${this.serie.title}</strong> ${rating} star(s)`,
-                        type: 'success'
+                axios
+                    .patch(`/api/series/${this.serie.id}/ratings`, {
+                        rating: rating
+                    })
+                    .then((response) => {
+                        this.$notify({
+                            group: 'notifications',
+                            title: 'Rating has been updated',
+                            text: `You have given <strong>${this.serie.title}</strong> ${rating} star(s)`,
+                            type: 'success'
+                        });
+                    })
+                    .catch((error) => {
+                        this.$notify({
+                            group: 'notifications',
+                            title: 'Ooh noo!',
+                            text: `Something went wrong while updating the rating of <strong>${this.serie.title}</strong> :(`,
+                            type: 'error'
+                        });
                     });
-                });
             }
         }
     }
