@@ -15,7 +15,11 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col">
-                    <stars :initial-stars="stars" v-on:updated-rating="handleUpdatedRating"></stars>
+                    <stars
+                        :initial-stars="stars"
+                        v-on:updated-rating="handleUpdatedRating"
+                        v-on:deleted-rating="handleDeletedRating"
+                    ></stars>
                 </div>
                 <div class="col">
                     <ul class="icon-bar list-inline m-0 float-right">
@@ -60,6 +64,26 @@
                             group: 'notifications',
                             title: 'Ooh noo!',
                             text: `Something went wrong while updating the rating of <strong>${this.serie.title}</strong> :(`,
+                            type: 'error'
+                        });
+                    });
+            },
+            handleDeletedRating: function () {
+                this.stars = 0;
+
+                axios.delete(`/api/series/${this.serie.id}/ratings`)
+                    .then((response) => {
+                        this.$notify({
+                            group: 'notifications',
+                            title: 'Rating has been deleted',
+                            text: `Your rating for <strong>${this.serie.title}</strong> is deleted.`,
+                        });
+                    })
+                    .catch((error) => {
+                        this.$notify({
+                            group: 'notifications',
+                            title: 'Ooh noo!',
+                            text: `Something went wrong while deleting the rating of <strong>${this.serie.title}</strong> :(`,
                             type: 'error'
                         });
                     });

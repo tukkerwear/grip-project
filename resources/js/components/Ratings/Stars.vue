@@ -8,6 +8,9 @@
                 ></i>
 
             </li>
+            <li class="list-inline-item" v-show="initialStars > 0" @click="deleteStars()">
+                <i class="fas fa-ban text-danger"></i>
+            </li>
         </ul>
     </div>
 </template>
@@ -15,17 +18,20 @@
 <script>
     export default {
         props: ['initialStars'],
-        data: function(){
+        data: function () {
             return {
-                stars: 1
+                stars: 0
             }
         },
         mounted() {
             this.stars = this.initialStars;
         },
         methods: {
-            updateStars: function(rating) {
+            updateStars: function (rating) {
                 this.$emit('updated-rating', rating);
+            },
+            deleteStars: function() {
+                this.$emit('deleted-rating');
             }
         }
     }

@@ -25,6 +25,7 @@ Vue.use(Notifications);
 Vue.component('serie-card', require('./components/Series/Tile.vue'));
 Vue.component('stars', require('./components/Ratings/Stars.vue'));
 
+
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {
