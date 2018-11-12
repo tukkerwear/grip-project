@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateSerieRatingRequest;
 use App\Serie;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,10 @@ use Illuminate\Http\Request;
 class SerieRatingController extends Controller
 {
     /**
-     * @param Request $request
+     * @param UpdateSerieRatingRequest $request
      * @param Serie $serie
      */
-    public function update(Request $request, Serie $serie)
+    public function update(UpdateSerieRatingRequest $request, Serie $serie)
     {
         auth()->user()->rate($serie, $request->get('rating', 0));
     }
